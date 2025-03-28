@@ -151,10 +151,13 @@ class _GraphViewState extends State<GraphView> {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    height: 400,
-                    width: 500,
-                    child: LineChart(feedGraph(feed)),
+                  Text('Real Time Graph'),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 15),
+                    child: SizedBox(
+                      height: 400,
+                      child: LineChart(feedGraph(feed)),
+                    ),
                   ),
                 ],
               );

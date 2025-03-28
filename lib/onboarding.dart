@@ -1,5 +1,6 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
+import 'package:pulse/homepage.dart';
 
 class DeviceConnectionPage extends StatefulWidget {
   final String espDeviceName; // Name of your ESP device
@@ -111,43 +112,53 @@ class _DeviceConnectionPageState extends State<DeviceConnectionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Device Connection")),
+      appBar: AppBar(),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              // Text(
+              //   "Connecting to ${widget.espDeviceName}",
+              //   style: const TextStyle(fontSize: 20),
+              // ),
+              // const SizedBox(height: 20),
+              // if (_isDeviceConnected && _isWifiConnected) ...[
+              //   // Show success message
+              //   const Icon(Icons.check_circle, color: Colors.green, size: 60),
+              //   const Text("Device and WiFi connected!",
+              //       style: TextStyle(fontSize: 18, color: Colors.green)),
+              // ] else if (_isDeviceConnected && !_isWifiConnected) ...[
+              //   // Wifi not connected
+              //   const Icon(Icons.wifi_off, color: Colors.orange, size: 60),
+              //   const Text("Device Active, but WiFi not connected to device!",
+              //       style: TextStyle(fontSize: 18, color: Colors.orange)),
+              //   Text(
+              //       "Please connect your phone's WiFi to the ${widget.espDeviceName} network.",
+              //       style: const TextStyle(fontSize: 16)),
+              // ] else ...[
+              //   // Device not connected
+              //   const Icon(Icons.bluetooth_disabled,
+              //       color: Colors.red, size: 60),
+              //   Text(
+              //       "Could not find ${widget.espDeviceName}. Please make sure the device is turned on and in range.",
+              //       style: const TextStyle(fontSize: 16)),
+              // ],
+              // const SizedBox(height: 20),
+              // ElevatedButton(
+              //   onPressed: _checkDeviceConnection, // Re-check connection
+              //   child: const Text("Recheck Connection"),
+              // ),
               Text(
-                "Connecting to ${widget.espDeviceName}",
-                style: const TextStyle(fontSize: 20),
-              ),
-              const SizedBox(height: 20),
-              if (_isDeviceConnected && _isWifiConnected) ...[
-                // Show success message
-                const Icon(Icons.check_circle, color: Colors.green, size: 60),
-                const Text("Device and WiFi connected!",
-                    style: TextStyle(fontSize: 18, color: Colors.green)),
-              ] else if (_isDeviceConnected && !_isWifiConnected) ...[
-                // Wifi not connected
-                const Icon(Icons.wifi_off, color: Colors.orange, size: 60),
-                const Text("Device Active, but WiFi not connected to device!",
-                    style: TextStyle(fontSize: 18, color: Colors.orange)),
-                Text(
-                    "Please connect your phone's WiFi to the ${widget.espDeviceName} network.",
-                    style: const TextStyle(fontSize: 16)),
-              ] else ...[
-                // Device not connected
-                const Icon(Icons.bluetooth_disabled,
-                    color: Colors.red, size: 60),
-                Text(
-                    "Could not find ${widget.espDeviceName}. Please make sure the device is turned on and in range.",
-                    style: const TextStyle(fontSize: 16)),
-              ],
+                  "Please ensure that you have connected your device with wifi and mobile data is turned off"),
               const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: _checkDeviceConnection, // Re-check connection
-                child: const Text("Recheck Connection"),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Homepage()));
+                }, // Re-check connection
+                child: const Text("Go to Dashboard"),
               ),
             ],
           ),
