@@ -48,6 +48,7 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text('Pulse App'),
       ),
       body: SingleChildScrollView(
@@ -282,8 +283,12 @@ class _HomepageState extends State<Homepage> {
                 ),
               );
             }
-            return const Center(
-              child: CircularProgressIndicator(),
+            return Padding(
+              padding:
+                  EdgeInsets.only(top: MediaQuery.sizeOf(context).height / 3),
+              child: const Center(
+                child: CircularProgressIndicator(),
+              ),
             );
           },
         ),

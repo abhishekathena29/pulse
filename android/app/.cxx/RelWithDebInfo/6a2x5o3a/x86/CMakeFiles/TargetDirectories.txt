@@ -1,0 +1,2 @@
+C:/Users/anpap/Desktop/athena/pulse/android/app/.cxx/RelWithDebInfo/6a2x5o3a/x86/CMakeFiles/edit_cache.dir
+C:/Users/anpap/Desktop/athena/pulse/android/app/.cxx/RelWithDebInfo/6a2x5o3a/x86/CMakeFiles/rebuild_cache.dir
